@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Updated filters styles for responsiveness */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.filters label {
+  font-weight: bold;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.filters select {
+  margin-right: 15px;
+  padding: 4px 6px;
+  font-size: 14px;
+  min-width: 140px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  position: relative;
+}
+
+th {
+  background-color: #1a73e8;
+  color: white;
+  user-select: none;
+  padding-right: 40px; /* space for sort button */
+}
+
+/* Sort dropdown container */
+.sort-dropdown {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* Sort arrow button */
+.sort-arrow {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Sort menu dropdown */
+.sort-menu {
+  display: none;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  background: white;
+  border: 1.5px solid #4CAF50;
+  min-width: 180px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  padding: 4px 0;
+}
+
+.sort-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #222;
+  background: white;
+  white-space: nowrap;
+  font-size: 15px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  margin: 2px 4px;
+  transition: background 0.15s, border 0.15s;
+}
+
+.sort-menu-item:hover, .sort-menu-item.active {
+  background: #e8f3fa;
+  border: 2px solid #1a73e8;
+}
+
+.sort-icon {
+  width: 32px;
+  text-align: center;
+  font-size: 17px;
+  margin-right: 8px;
+  font-family: Arial, sans-serif;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.sort-icon.az {
+  color: #1a73e8;
+}
+.sort-icon.za {
+  color: #d93025;
+}
+.sort-icon.num-az {
+  color: #1a73e8;
+}
+.sort-icon.num-za {
+  color: #d93025;
+}
+.arrow {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-top: -2px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive styles for filters and table */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .filters label,
+  .filters select {
+    display: block;
+    width: 100%;
+    margin: 0 0 4px 0;
+    text-align: left;
+    margin-right: 0; /* Remove right margin on mobile */
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Data Table</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>User Data Table</h1>
+
+  <div class="filters">
+    <label for="genderFilter">Filter by Gender:</label>
+    <select id="genderFilter" onchange="applyFilters()">
+      <option value="all">All Genders</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <label for="countryFilter">Filter by Country:</label>
+    <select id="countryFilter" onchange="applyFilters()">
+      <option value="all">All Countries</option>
+      <!-- Country options dynamically added by script -->
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+          <div class="sort-dropdown">
+            <button class="sort-arrow" onclick="toggleSortMenu(event, 'name')">▼</button>
+            <div class="sort-menu" id="sort-menu-name">
+              <div class="sort-menu-item" onclick="sortTable('name', 'asc')">
+                <span class="sort-icon az">A - Z ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort A to Z</span>
+              </div>
+              <div class="sort-menu-item" onclick="sortTable('name', 'desc')">
+                <span class="sort-icon za">Z - A ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort Z to A</span>
+              </div>
+            </div>
+          </div>
+        </th>
+        <th>
+          Email
+          <div class="sort-dropdown">
+            <button class="sort-arrow" onclick="toggleSortMenu(event, 'email')">▼</button>
+            <div class="sort-menu" id="sort-menu-email">
+              <div class="sort-menu-item" onclick="sortTable('email', 'asc')">
+                <span class="sort-icon az">A - Z ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort A to Z</span>
+              </div>
+              <div class="sort-menu-item" onclick="sortTable('email', 'desc')">
+                <span class="sort-icon za">Z - A ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort Z to A</span>
+              </div>
+            </div>
+          </div>
+        </th>
+        <th>
+          Gender
+        </th>
+        <th>
+          Country
+          <div class="sort-dropdown">
+            <button class="sort-arrow" onclick="toggleSortMenu(event, 'country')">▼</button>
+            <div class="sort-menu" id="sort-menu-country">
+              <div class="sort-menu-item" onclick="sortTable('country', 'asc')">
+                <span class="sort-icon az">A - Z ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort A to Z</span>
+              </div>
+              <div class="sort-menu-item" onclick="sortTable('country', 'desc')">
+                <span class="sort-icon za">Z - A ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort Z to A</span>
+              </div>
+            </div>
+          </div>
+        </th>
+        <th>
+          Age
+          <div class="sort-dropdown">
+            <button class="sort-arrow" onclick="toggleSortMenu(event, 'age')">▼</button>
+            <div class="sort-menu" id="sort-menu-age">
+              <div class="sort-menu-item" onclick="sortTable('age', 'asc')">
+                <span class="sort-icon num-az">1 - 9 ↓&nbsp; </span>
+                <span class="sort-text"> &nbsp; &nbsp;Sort 1 to 9</span>
+              </div>
+              <div class="sort-menu-item" onclick="sortTable('age', 'desc')">
+                <span class="sort-icon num-za">9 - 1 ↓&nbsp;</span>
+                <span class="sort-text">&nbsp; &nbsp;Sort 9 to 1</span>
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- User data rows inserted here by script.js -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
