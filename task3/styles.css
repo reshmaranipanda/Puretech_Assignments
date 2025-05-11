@@ -1,0 +1,169 @@
+:root {
+  --bg-color-light: #f0f4f8;
+  --text-color-light: #222;
+  --bg-color-dark: #121212;
+  --text-color-dark: #eee;
+  --primary-color: #2196f3;
+  --error-color: #d93025;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  color: var(--text-color-light);
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: var(--text-color-dark);
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .container {
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-color-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+body.dark-mode #themeToggle {
+  color: #ffeb3b;
+}
+
+form {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #1976d2;
+}
+
+button[type="submit"] {
+  padding: 12px 24px;
+  font-size: 18px;
+  background: linear-gradient(to right, #2196f3, #21cbf3);
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(to right, #1976d2, #1e88e5);
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.weather-display {
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.weather-display.hidden {
+  display: none;
+}
+
+.weather-info {
+  background-color: #ffffffdd;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.weather-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.weather-info p {
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+/* Dark mode weather card improvements */
+body.dark-mode .weather-info {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .weather-info p {
+  color: #eee;
+}
+
+body.dark-mode strong {
+  color: #fff;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    gap: 8px;
+  }
+  input[type="text"] {
+    width: 90%;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  input[type="text"] {
+    border-radius: 8px 8px 8px 8px;
+  }
+  button[type="submit"] {
+    border-radius: 8px 8px 8px 8px;
+  }
+}
+
+* {
+  transition: all 0.3s ease;
+}
