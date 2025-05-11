@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Registration Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>User Registration Form </h2>
+    <form id="registrationForm" novalidate>
+      <div class="form-group">
+        <label for="name"> Full Name <span style="color: red;">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" />
+        <small class="error-message" id="nameError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span style="color: red;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" />
+        <small class="error-message" id="emailError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password <span style="color: red;">*</span></label>
+        <input type="password" id="password" name="password" placeholder="Enter a strong password" />
+        <small class="error-message" id="passwordError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth <span style="color: red;">*</span></label>
+        <input type="date" id="dob" name="dob" />
+        <small class="error-message" id="dobError"></small>
+      </div>
+
+      <button type="submit">Register</button>
+      <button type="button" id="loadDataBtn">Load Saved Data</button>
+    </form>
+    <div id="successMessage" class="success-message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
